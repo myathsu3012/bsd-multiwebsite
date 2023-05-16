@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    	@font-face {
+    font-family: "Amatic SC";
+    src: url("/resources/fonts/AmaticSC-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Work Sans";
+    src: url("/resources/fonts/WorkSans-Regular.ttf");
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Amatic SC", cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for ALL page content, including header and footer */
+#wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Container for page content BETWEEN the header and footer */
+#page-wrapper {
+    padding-bottom: 3%;
+}
+
+header {
+    height: 10vh;
+	background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo image in the header */
+header img {
+    width: 45px;
+}
+
+ul {
+    text-align: center;
+    margin-right: 2rem;
+}
+
+li {
+    color: #ffffff;
+    display: inline-block;
+    margin: 0 0 0 20px;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+li:hover,
+li:active {
+	color: #FFD600; 
+}
+
+div.banner {
+    height: 45vh;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+}
+
+#home-banner {
+	background-image: url("/resources/projects/techready-multi-page-website/piglet-2351723_1280.png"); 
+}
+
+#about-banner {
+	background-image: url("/resources/projects/techready-multi-page-website/chicks-3803535_960_720.jpg");
+}
+
+#services-banner {
+	background-image: url("/resources/projects/techready-multi-page-website/pigs-5240702_1920.jpg");
+}
+
+#contact-banner {
+	background-image: url("/resources/projects/techready-multi-page-website/lamb-4136278_1920.jpg");  
+}
+
+/* <h1> element on the Home page banner */
+.banner h1 {
+    margin: 0;
+    font-size: 65px;
+}
+
+/* <h2> element on the Home page banner only */
+#home-banner h2 {
+    font-size: 42px;
+}
+
+/* <h2> elements in the page banners */
+.banner h2 {
+    font-size: 60px;
+    margin: 10px 0 0;
+}
+
+/* <h3> elements in the page banners */
+.banner h3 {
+    font-size: 40px;
+    margin-top: -5px;
+}
+
+h2 {
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 18px;
+    font-family: "Work Sans", sans-serif;
+}
+
+h4 {
+    font-family: "Work Sans", sans-serif;
+    line-height: 0.5;
+}
+
+/* Font Awesome icons in the Contact page */
+h4::before {
+    font-family: "Font Awesome 5 Free";
+    margin-right: 10px;
+    color: #000000; 
+}
+
+h4#email-info::before {
+    content: "\f0e0";
+}
+
+h4#phone-info::before {
+    content: "\f095";
+}
+
+h4#address-info::before {
+    content: "\f3c5";
+}
+
+div.row {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 3% 3% 3%;
+    margin-bottom: 1%;
+}
+
+/* Images on the Home and "What We Do" pages */
+section img {
+    width: 100%;
+    object-fit: contain;
+}
+
+section.text-col {
+    flex: 2 1 0;
+    padding: 2% 3%;
+}
+
+section.img-col {
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+/* Container for the text in the "About Us" and "Contact Us" pages */
+.text-wrapper {
+    display: grid;
+    grid-template-columns: 1fr min(100ch, 100%) 1fr;
+    padding: 3%;
+}
+
+.text-wrapper>* {
+    grid-column: 2;
+}
+
+footer {
+	background-color: #41924B;
+	width: 100%;
+	height: 4vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer text */
+footer p {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+
+/* Media queries for mobile view */
+
+@media (max-width: 767.98px) {
+    #header img {
+        width: 50px;
+    }
+    li {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 414px) {
+    .banner h1 {
+        font-size: 2em;
+    }
+    #home-banner h2 {
+        font-size: 1.5em;
+    }
+    .row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .row img {
+        width: 70%;
+    }
+    
+    section {
+      margin-bottom: 5%;
+    }
+    
+    footer p {
+        font-size: 0.75em;
+    }
+}
+       
+    </style>
+</head>
+
+<body>
+
+    <!-- Container for ALL webpage content -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header>
+			<img src="/resources/projects/techready-multi-page-website/illustration-1518342_960_720.png" />
+			<ul>
+				<li id="nav-home"><a href="home.html">Home</a></li>
+				<li id="nav-about"><a href="about.html">About Us</a></li>
+				<li id="nav-services"><a href="service.html">What We Do</a></li>
+				<li id="nav-contact"><a href="contact.html">Contact Us</a></li>   
+			</ul>
+		</header>
+
+        <!-- Container for page content between the header and footer -->
+		<div id="page-wrapper">
+
+			<!-- Home page -->
+			<div id="home">
+				<div id="home-banner" class="banner">
+					<h1>Kind Hearts Animal Sanctuary</h1>
+					<h2>Compassion for all beings</h2>
+				</div>
+				<div class="row">
+					<section class="img-col">
+						<img src="img1.png">
+					</section>
+					<section class="text-col">
+						<h2>Compassion for all beings</h2>
+						<p>We are a vegan non-profit animal rescue organization and sanctuary in Ontario, Canada. We rescue and rehabilitate farm animals from slaughterhouses, laboratories, fur farms, and the entertainment industry. We believe that every sentient being has a right to live a life free of suffering and human exploitation.</p>
+					</section>
+				</div>
+			</div>
+			<!-- End of Home page -->
+
+		<!-- Footer -->
+		<footer>
+			<p>Kind Hearts Animal Sanctuary. Copyright &copy; 2021.</p> 
+		</footer>
+
+    </div>
+    <!-- End tag for <div id="wrapper"> -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>    
